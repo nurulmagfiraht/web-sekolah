@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 14, 2024 at 02:35 PM
+-- Generation Time: Aug 14, 2024 at 05:48 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `organisasi`
+-- Database: `web-sekolah`
 --
 
 -- --------------------------------------------------------
@@ -93,12 +93,12 @@ CREATE TABLE `table_kegiatan` (
 --
 
 INSERT INTO `table_kegiatan` (`id_kegiatan`, `photo`, `keterangan`) VALUES
-(5, '23072022120315-kegiatan-ANNIVERSARY.jpg', 'Anniversary VI IMS PNUP'),
-(6, '23072022120409-kegiatan-baksos.jpeg', 'BAKSOS 2022 IMS PNUP'),
+(6, '14082024090715-kegiatan-upacara.jpg', 'BAKSOS 2022 IMS PNUP'),
 (7, '23072022120458-kegiatan-kajian kedaerahan.jpg', 'Kajian Kedaerahan \"La Galigo\"'),
 (8, '23072022120552-kegiatan-pengkaderan 2021.jpg', 'PENGADERAN 2021'),
 (9, '23072022120631-kegiatan-persembahan anniversary VI IMS.jpg', 'Persembahan Anniversary VI IMS PNUP'),
-(11, '23072022122409-kegiatan-23072022121904-kegiatan-kajian dan diskusi.jpg', 'Kajian dan Diskusi \"Sejarah IMS PNUP\" oleh Kakanda Ibrahim di Sekretariat IMS PNUP, 18 Juli 2022');
+(11, '23072022122409-kegiatan-23072022121904-kegiatan-kajian dan diskusi.jpg', 'Kajian dan Diskusi \"Sejarah IMS PNUP\" oleh Kakanda Ibrahim di Sekretariat IMS PNUP, 18 Juli 2022'),
+(12, 'upacara.jpg', 'Upacara 17 Agustus');
 
 -- --------------------------------------------------------
 
@@ -111,9 +111,9 @@ CREATE TABLE `table_struktur` (
   `nama` varchar(255) NOT NULL,
   `divisi` varchar(255) NOT NULL,
   `jabatan` varchar(255) NOT NULL,
-  `periode` varchar(255) NOT NULL,
+  `tahun_masuk` varchar(255) NOT NULL,
   `foto` text NOT NULL,
-  `nim` int(11) NOT NULL,
+  `nip` int(11) NOT NULL,
   `jenis_kelamin` enum('L','P') NOT NULL,
   `tempat_lahir` text NOT NULL,
   `tanggal_lahir` date DEFAULT NULL,
@@ -125,7 +125,7 @@ CREATE TABLE `table_struktur` (
 -- Dumping data for table `table_struktur`
 --
 
-INSERT INTO `table_struktur` (`id_nama`, `nama`, `divisi`, `jabatan`, `periode`, `foto`, `nim`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `no_handphone`, `alamat`) VALUES
+INSERT INTO `table_struktur` (`id_nama`, `nama`, `divisi`, `jabatan`, `tahun_masuk`, `foto`, `nip`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `no_handphone`, `alamat`) VALUES
 (12, 'Gugun Maulana Ashar, A.Md.T', 'Pengurus inti', 'Ketua Dpo', '2021/2022', 'akram.JPG', 321180030, 'L', 'Batu-batu', NULL, '08135412345', 'Pesona Pelangi Residence'),
 (13, 'Fadhil Farid', 'Pengurus inti', 'Ketua Umum', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
 (14, 'Nurcahyati Sarjuni', 'Pengurus inti', 'Sekertaris Umum', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
@@ -136,56 +136,9 @@ INSERT INTO `table_struktur` (`id_nama`, `nama`, `divisi`, `jabatan`, `periode`,
 (19, 'Reski', 'Dept. Pengkaderan', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
 (20, 'Ricky Rahmat', 'Dept. Pengkaderan', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
 (21, 'Umar Yusuf', 'Dept. Pengkaderan', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(22, 'Muh. Ilham', 'Dept. Hubungan Masyarakat', 'Kordinator', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(23, 'A.Abdiawan Prawira Negara', 'Dept. Hubungan Masyarakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(24, 'Andi Triannisa Zalzabila', 'Dept. Hubungan Masyarakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(25, 'Akram Alimin', 'Dept. Hubungan Masyarakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(26, 'Askar Nur', 'Dept. Hubungan Masyarakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(27, 'Ayyun Syah Muharram', 'Dept. Hubungan Masyarakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(28, 'Azrah Dwi Ningsih', 'Dept. Hubungan Masyarakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(29, 'Muh. Fajri', 'Dept. Hubungan Masyarakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(30, 'Fandi Kusuma', 'Dept. Hubungan Masyarakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(31, 'Indah Purnama Sari', 'Dept. Hubungan Masyarakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(32, 'Irmawati Irham', 'Dept. Hubungan Masyarakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(33, 'Muh. Irham Hidayatullah', 'Dept. Hubungan Masyarakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(34, 'Muhammad Yusuf', 'Dept. Hubungan Masyarakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(35, 'Nurazizah', 'Dept. Hubungan Masyarakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(36, 'Nurul Magfirah Tenriajeng', 'Dept. Hubungan Masyarakat', 'Anggota', '2021/2022', 'numa.jpg', 42520043, 'P', 'Watansoppeng', NULL, '08218895980', 'Perumahan Mangga Tiga Blok H1 No.6'),
-(37, 'Resky Amalia', 'Dept. Hubungan Masyarakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(38, 'Selviyana Safitri', 'Dept. Hubungan Masyarakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(39, 'Miftahul Ginayah', 'Dept. Dana Dan Kesektariatan', 'Kordinator', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(40, 'A.Silva Sutera', 'Dept. Dana Dan Kesektariatan', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(41, 'Evania Herasti Aurelia', 'Dept. Dana Dan Kesektariatan', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(42, 'Faisal Akbar', 'Dept. Dana Dan Kesektariatan', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(43, 'Fitri Zanjaya', 'Dept. Dana Dan Kesektariatan', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(44, 'Jumadil Azis', 'Dept. Dana Dan Kesektariatan', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(45, 'Muh. Nurhasryan Hasbi', 'Dept. Dana Dan Kesektariatan', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(46, 'Nurasikin', 'Dept. Dana Dan Kesektariatan', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(47, 'Nur Aulia', 'Dept. Dana Dan Kesektariatan', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(48, 'Nur Fahmi', 'Dept. Dana Dan Kesektariatan', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(49, 'Nurul Aulia', 'Dept. Dana Dan Kesektariatan', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(50, 'Qurratul Aini', 'Dept. Dana Dan Kesektariatan', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(51, 'Syamsul Ma’arif', 'Dept. Dana Dan Kesektariatan', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(52, 'Utari Ainil Ilmi', 'Dept. Dana Dan Kesektariatan', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(53, 'Kurniawan', 'Dept. Minat Bakat', 'Kordinator', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(54, 'Anjas', 'Dept. Minat Bakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(55, 'Ansar', 'Dept. Minat Bakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(56, 'Asbar', 'Dept. Minat Bakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(57, 'Aulia Putri Adrianti', 'Dept. Minat Bakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(58, 'Hastriana', 'Dept. Minat Bakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(59, 'Iin Safitri', 'Dept. Minat Bakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(60, 'M. Ashar Alhakim', 'Dept. Minat Bakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(61, 'M. Farhan Saputra', 'Dept. Minat Bakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(62, 'Muh. Agung Perdana', 'Dept. Minat Bakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(63, 'Muhammad Hidayatullah', 'Dept. Minat Bakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(64, 'Muhammad Jamil Asri', 'Dept. Minat Bakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(65, 'Muh. Hilal Priyatama', 'Dept. Minat Bakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(66, 'Musdalifah', 'Dept. Minat Bakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(67, 'Nofia', 'Dept. Minat Bakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(68, 'Nurul Rezky Anugrah', 'Dept. Minat Bakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(69, 'Riri', 'Dept. Minat Bakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(70, 'Umar', 'Dept. Minat Bakat', 'Anggota', '2021/2022', '', 0, 'L', '', NULL, '0', ''),
-(71, 'Yan Febrian', 'Dept. Hubungan Masyarakat', 'Kordinator', '2021/2022', 'Yan.JPG', 32120032, 'L', 'Soppeng', '2002-01-01', '08218895980', 'BTP Blok L');
+(22, 'Muh. Ilham', 'SENI', 'Guru Mapel', '2020', '42520035.jpeg', 190809, 'L', 'Makassar', '1994-01-02', '08218896980', 'BTP BLOK L'),
+(83, 'Maemunah', 'IPA', 'Guru Mapel', '2021', '42520025.jpeg', 192890, 'P', 'Watansoppeng', '2002-10-23', '08218895980', 'SUDIANG'),
+(84, 'Muh. Alif Solihin', 'SENI', 'Guru Mapel', '2019', '42520036.jpeg', 1890783, 'L', 'Makassar', '1980-12-23', '08218806907', 'BTP');
 
 --
 -- Indexes for dumped tables
@@ -235,13 +188,13 @@ ALTER TABLE `table_alumni`
 -- AUTO_INCREMENT for table `table_kegiatan`
 --
 ALTER TABLE `table_kegiatan`
-  MODIFY `id_kegiatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_kegiatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `table_struktur`
 --
 ALTER TABLE `table_struktur`
-  MODIFY `id_nama` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `id_nama` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
