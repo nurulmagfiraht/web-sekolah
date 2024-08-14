@@ -3,7 +3,7 @@
 $host="localhost";
 $user="root";
 $password="";
-$db="organisasi";
+$db="web-sekolah";
 
 $kon = mysqli_connect($host,$user,$password,$db);
 if (!$kon){

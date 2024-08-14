@@ -2,10 +2,10 @@
     include "koneksi.php";
 
     $NAMA= $_POST["NAMA"];
-    $DEVISI= $_POST["DEVISI"];
-    $JABATAN= $_POST["JABATAN"];
-    $PERIODE= $_POST["PERIODE"];
-    $nim= $_POST["nim"];
+    $divisi= $_POST["divisi"];
+    $jabatan= $_POST["jabatan"];
+    $tahun_masuk= $_POST["tahun_masuk"];
+    $nip= $_POST["nip"];
     $jenis_kelamin= $_POST["jenis_kelamin"];
     $tempat_lahir= $_POST["tempat_lahir"];
     $tanggal_lahir= $_POST["tanggal_lahir"];
@@ -15,8 +15,8 @@
 
     if (isset($_POST['submit'])){
         
-        $sql="insert into table_struktur (nama,divisi,jabatan,periode,foto,nim,jenis_kelamin,tempat_lahir,tanggal_lahir,no_handphone,alamat) values
-		('$NAMA','$DEVISI','$JABATAN','$PERIODE','$photo','$nim','$jenis_kelamin','$tempat_lahir','$tanggal_lahir','$no_handphone','$alamat')";
+        $sql="insert into table_struktur (nama,divisi,jabatan,tahun_masuk,foto,nip,jenis_kelamin,tempat_lahir,tanggal_lahir,no_handphone,alamat) values
+		('$NAMA','$divisi','$jabatan','$tahun_masuk','$photo','$nip','$jenis_kelamin','$tempat_lahir','$tanggal_lahir','$no_handphone','$alamat')";
 
         // echo "<div class='alert alert-danger'> ".$sql.".</div>";
         $hasil=mysqli_query($kon,$sql);

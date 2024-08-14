@@ -1,9 +1,7 @@
 <?php 
 
 require_once 'koneksi.php';
-if(!isset($_GET['id']) || $_GET['id'] == '') header('Location: index.php'){
-	$id = base64_encode($id)
-};
+if(!isset($_GET['id']) || $_GET['id'] == '');
 
 $id = $_GET['id'];
 $query = mysqli_query($kon, "SELECT * FROM table_struktur WHERE table_struktur.id_nama = $id");
@@ -13,14 +11,13 @@ $aktif = 'struktur';
 
 include ('navbar_forend.php'); 
 ?>
-	<div class="container bg-light">
+<body>
+<div class="container-fluid d-flex flex-column min-vh-100 bg-light">
 		<!-- top bar -->
 		<div class="logo clearfix">
 			<div class="float-left mt-3 mb-3">
 				<img src="resources/images/logo.png" alt="Logo Sekolah" width="70px" class="float-left mr-3">
 				<div class="text float-right">
-					<span class="smk">IMS PNUP</span><br>
-					<span class="visi">YassiSoppengi!</span>
 				</div>
 			</div>
 		</div>
@@ -29,9 +26,10 @@ include ('navbar_forend.php');
 		
 
 		<!-- content -->
-		<div class="row p-3">
-			<div class="col-md-8">
-				<div class="title mb-3">
+
+		<div class="row flex-grow-1">
+        <div class="col-md-8">
+            <div class="title mb-3">
 					Detail Pengurus - <b><?= $row['nama'] ?></b>
 				</div>
 				<table class="table table-stripped">
@@ -41,9 +39,9 @@ include ('navbar_forend.php');
 								<td><?= $row['nama'] ?></td>
 							</tr>
 							<tr>
-								<td><b>NIM</b></td>
+								<td><b>NIP</b></td>
 								<td>:</td>
-								<td><?= $row['nim'] ?></td>
+								<td><?= $row['nip'] ?></td>
 							</tr>
 							<tr>
 								<td><b>Jenis Kelamin</b></td>
@@ -85,7 +83,12 @@ include ('navbar_forend.php');
 							</tr>
 						</table>
 			</div> 
+
 		</div>
-<?php
-include ('footer_forend.php');
-?>
+		<?php
+		include ('footer_forend.php');
+		?>
+		</div>
+</body>
+	
+		</html>

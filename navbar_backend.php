@@ -18,7 +18,7 @@ if( !isset($_SESSION["login"])){
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>SISTEM INFORMASI ORGANISASI</title>
+    <title>SISTEM INFORMASI SMKN 8 Makassar</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
@@ -61,31 +61,25 @@ if( !isset($_SESSION["login"])){
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            <i class="fas fa-graduation-cap"></i>
-            <span>Data Alumni</span>
-          </a>
-          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="dataAlumni_admin.php">Data Alumni</a> 
-            <a class="collapse-item" href="form_tambah_alumni.php">Tambah Data Alumni</a>
-            <a class="collapse-item" href="print_data_alumni.php">Print Data Alumni</a>
-              
-            </div>
-          </div>
-        </li>
-        <li class="nav-item">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-users"></i>
-            <span>Data Struktur</span>
+            <span>Data Guru</span>
           </a>
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="struktur_admin.php">Data Struktur</a>
-              <a class="collapse-item" href="form_struktur.php">Tambah Data Struktur</a>
-              <a class="collapse-item" href="print_data_struktur.php">Print Data Struktur</a>
+              <a class="collapse-item" href="struktur_admin.php">Data Guru</a>
+              <a class="collapse-item" href="form_struktur.php">Tambah Data Guru</a>
+              <a class="collapse-item" href="print_data_struktur.php">Print Data Guru</a>
             </div>
           </div>
+        </li>
+
+        <!-- Nav Item - Utilities Collapse Menu -->
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="form_upload.php" aria-controls="collapseUtilities">
+            <i class="fas fa-user"></i>
+            <span>Formulir Pendaftaran</span>
+          </a>
         </li>
 
         <!-- Nav Item - Utilities Collapse Menu -->

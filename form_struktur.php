@@ -2,45 +2,41 @@
 include('navbar_backend.php');
 ?>
 <div class="container">
-    <div class="text-center"> <h3>FORM INPUT DATA STRUKTUR</h3></div>
+    <div class="text-center"> <h3>FORM INPUT DATA GURU</h3></div>
     <form action="perintah_struktur_tambah.php" method="post">
 
     <div class="form-group">
         <label>Nama:</label>
         <input type="text" name="NAMA" class="form-control" placeholder="Masukan Nama" required autocomplete="off"/>
      </div>
-    <div class="form-group">
-        <label for="Divisi">Divisi</label>
-        <select class="form-control" name="DEVISI" id="DEVISI">
-        <option selected disabled value="">Pilih Divisi</option>
-            <option value="Pengurus inti">Pengurus inti</option>
-            <option value="Dept. Pengkaderan">Dept. Pengkaderan</option>
-            <option value="Dept. Hubungan Masyarakat">Dept. Hubungan Masyarakat</option>
-            <option value="Dept. Dana Dan Kesektariatan">Dept. Dana Dan Kesektariatan</option>
-            <option value="Dept. Minat Bakat">Dept. Minat Bakat</option>
+     <div class="form-group">
+        <label for="divisi">Divisi</label>
+        <select class="form-control" name="divisi" id="divisi">
+        <option selected><?php echo $data['divisi']; ?></option>
+            <option value="IPA">IPA</option>
+            <option value="SENI">SENI</option>
+            <option value="IPS">IPS</option>
+            <option value="BK">BK</option>
+            <option value="PJOK">PJOK</option>
         </select>
     </div>
     <div class="form-group">
-        <label for="JABATAN">Jabatan</label>
-        <select class="form-control" name="JABATAN" id="JABATAN">
-        <option selected disabled value="">Pilih Jabatan</option>
-            <option value="Ketua Dpo">Ketua Dpo</option>
-            <option value="Ketua Umum">Ketua Umum</option>
-            <option value="Sekertaris Umum">Sekertaris Umum</option>
-            <option value="Bendahara Umum">Bendahara Umum</option>
-            <option value="Kordinator">Kordinator</option>
-            <option value="Anggota">Anggota</option>
+        <label for="jabatan">Jabatan</label>
+        <select class="form-control" name="jabatan" id="jabatan">
+        <option selected><?php echo $data['jabatan']; ?></option>
+            <option value="Guru Mapel">Guru Mapel</option>
+            <option value="Guru BK">Guru BK</option>
         </select>
     </div>
 
     <div class="form-group">
-        <label>Periode:</label>
-        <input type="text" name="PERIODE" class="form-control" placeholder="Masukan Periode" required autocomplete="off"/>
+        <label>Tahun Masuk:</label>
+        <input type="text" name="tahunmasuk" class="form-control" placeholder="Masukan Tahun Masuk" required autocomplete="off"/>
         </div>
     
     <div class="form-group">
-        <label>NIM:</label>
-        <input type="text" name="nim" class="form-control" placeholder="Masukan NIM" required autocomplete="off"/>
+        <label>NIP:</label>
+        <input type="text" name="nip" class="form-control" placeholder="Masukan NIP" required autocomplete="off"/>
         </div>
 
     <div class="form-group">

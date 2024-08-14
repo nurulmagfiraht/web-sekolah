@@ -5,7 +5,7 @@ include('navbar_backend.php');
 <div class="container-fluid">
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800 text-center">DATA STRUKTUR</h1>
+<h1 class="h3 mb-2 text-gray-800 text-center">DATA GURU</h1>
 <div class="row">
 <div class="col-9"></div>
 <div class="col-9"><a href="form_struktur.php?" class="btn btn-primary" role="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
@@ -52,7 +52,7 @@ include('navbar_backend.php');
                         <th>NAMA</th>
                         <th>DIVISI</th>
                         <th>JABATAN</th>
-                        <th>PERIODE</th>
+                        <th>TAHUN MASUK</th>
                         <th>AKSI</th>
                     </tr>
                 </thead>
@@ -64,7 +64,7 @@ include('navbar_backend.php');
                     $keyword = $_GET['keyword'];
                     if($keyword != ''){
                     $hasil =mysqli_query($kon, "SELECT * FROM table_struktur WHERE nama LIKE '".$keyword."' or divisi LIKE '".$keyword."'
-                    or jabatan LIKE '".$keyword."' or periode LIKE '".$keyword."'");
+                    or jabatan LIKE '".$keyword."' or tahun_masuk LIKE '".$keyword."'");
                     $_SESSION['keyword'] = $keyword;
                     } else{
                     $hasil =mysqli_query($kon, "SELECT * FROM table_struktur order by id_nama desc");
@@ -79,7 +79,7 @@ include('navbar_backend.php');
                         <td><?php echo $data['nama'];?></td>
 						<td><?php echo $data['divisi'];?></td>
                         <td><?php echo $data['jabatan'];?></td>
-                        <td><?php echo $data['periode'];?></td>
+                        <td><?php echo $data['tahun_masuk'];?></td>
                         <td>
                         <?php
                         $id_nama = base64_encode($data['id_nama']);

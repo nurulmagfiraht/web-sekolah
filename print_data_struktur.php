@@ -5,7 +5,7 @@ include('navbar_backend.php');
 <div class="container-fluid">
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800"><center>DATA STRUKTUR</center></h1>
+<h1 class="h3 mb-2 text-gray-800"><center>DATA GURU</center></h1>
 <div class="row">
 <div class="col-9"><a href="cetak_data_struktur.php?" target="_blank" class="btn btn-primary" role="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer-fill" viewBox="0 0 16 16">
   <path d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2H5zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z"/>
@@ -49,9 +49,9 @@ include('navbar_backend.php');
                     <tr>
                         <th>No</th>
                         <th>NAMA</th>
-                        <th>DEVISI</th>
+                        <th>DIVISI</th>
                         <th>JABATAN</th>
-                        <th>PERIODE</th>
+                        <th>TAHUN MASUK</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -62,7 +62,7 @@ include('navbar_backend.php');
                     $keyword = $_GET['keyword'];
                     if($keyword != ''){
                     $hasil =mysqli_query($kon, "SELECT * FROM table_struktur WHERE nama LIKE '".$keyword."' or divisi LIKE '".$keyword."'
-                    or jabatan LIKE '".$keyword."' or periode LIKE '".$keyword."'");
+                    or jabatan LIKE '".$keyword."' or tahun_masuk LIKE '".$keyword."'");
                     $_SESSION['keyword'] = $keyword;
                     } else{
                     $hasil =mysqli_query($kon, "SELECT * FROM table_struktur order by id_nama desc");
@@ -77,7 +77,7 @@ include('navbar_backend.php');
                         <td><?php echo $data['nama'];?></td>
 						<td><?php echo $data['divisi'];?></td>
                         <td><?php echo $data['jabatan'];?></td>
-                        <td><?php echo $data['periode'];?></td>
+                        <td><?php echo $data['tahun_masuk'];?></td>
                         </tr>
                     <?php
                     }

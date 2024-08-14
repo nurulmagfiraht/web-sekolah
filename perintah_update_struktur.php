@@ -16,8 +16,8 @@
         $nama=input($_POST["nama"]);
         $divisi=input($_POST["divisi"]);
         $jabatan=input($_POST["jabatan"]);
-        $periode=input($_POST["periode"]);
-        $nim=input($_POST["nim"]);
+        $tahun_masuk=input($_POST["tahun_masuk"]);
+        $nip=input($_POST["nip"]);
         $jenis_kelamin=input($_POST["jenis_kelamin"]);
         $tempat_lahir=input($_POST["tempat_lahir"]);
         $tanggal_lahir=input($_POST["tanggal_lahir"]);
@@ -28,8 +28,8 @@
         nama='$nama',
         divisi='$divisi',
         jabatan='$jabatan',
-        periode='$periode',
-        nim='$nim',
+        tahun_masuk='$tahun_masuk',
+        nip='$nip',
         jenis_kelamin='$jenis_kelamin',
         tempat_lahir='$tempat_lahir',
         tanggal_lahir='$tanggal_lahir',
@@ -40,7 +40,7 @@
         
         $hasil=mysqli_query($kon,$sql);
 
-        $uploadfile = $_SERVER['DOCUMENT_ROOT'] . '/organisasi/img/';
+        $uploadfile = $_SERVER['DOCUMENT_ROOT'] . '/web-sekolah/img/';
         move_uploaded_file($_FILES['photo']['tmp_name'], $uploadfile . $photo);
 
         if ($hasil) {

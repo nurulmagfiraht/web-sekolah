@@ -10,7 +10,7 @@ include('koneksi.php');
 <div class="container-fluid">
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800"><center>DATA STRUKTUR</center></h1>
+<h1 class="h3 mb-2 text-gray-800"><center>DATA GURU</center></h1>
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-body">
@@ -22,7 +22,7 @@ include('koneksi.php');
                         <th>NAMA</th>
                         <th>DIVISI</th>
                         <th>JABATAN</th>
-                        <th>PERIODE</th>
+                        <th>TAHUN MASUK</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,7 +33,7 @@ include('koneksi.php');
                     $keyword = $_SESSION['keyword'];
                     if($keyword != ''){
                     $hasil =mysqli_query($kon, "SELECT * FROM table_struktur WHERE nama LIKE '".$keyword."' or divisi LIKE '".$keyword."'
-                    or jabatan LIKE '".$keyword."' or periode LIKE '".$keyword."'");
+                    or jabatan LIKE '".$keyword."' or tahun_masuk LIKE '".$keyword."'");
                     $_SESSION['keyword'] = $keyword;
                     } else{
                     $hasil =mysqli_query($kon, "SELECT * FROM table_struktur order by id_nama desc");
@@ -48,7 +48,7 @@ include('koneksi.php');
                         <td><?php echo $data['nama'];?></td>
 						<td><?php echo $data['divisi'];?></td>
                         <td><?php echo $data['jabatan'];?></td>
-                        <td><?php echo $data['periode'];?></td>
+                        <td><?php echo $data['tahun_masuk'];?></td>
                         </tr>
                     <?php
                     }
